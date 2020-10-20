@@ -8,7 +8,7 @@ const LoginForm = ({userSetter}) => {
     const onLoginClicked = () => {
         const url = "./" + document.getElementById("username").value;
         axios.get(url).then(res => {
-            console.log("success");
+            console.log(`User ${res.data.username} Log in success!`);
             userSetter(res.data)
         }).catch(err => {
             console.log("error");
